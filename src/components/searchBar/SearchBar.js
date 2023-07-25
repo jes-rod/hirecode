@@ -34,7 +34,8 @@ const SearchBar = (props) => {
     setState(stateName);
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const jobs = await searchJobs(query, country, state, remote);
     props.setJobs(jobs);
     props.setFlag(true);
@@ -42,7 +43,7 @@ const SearchBar = (props) => {
   
   return (
     <div className="row px-10 py-10 justify-content-center">
-      <form action="#" method="post" className="row" >
+      <form  method="post" className="row" onSubmit={handleSubmit} >
         <div className="mb-6">
           <label className="form-label" >Search by query</label>
           <input className="form-control" type="text" name="field-name" placeholder="Front end developer" id="" onChange={(e) => setQuery(e.currentTarget.value)}/>
