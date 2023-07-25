@@ -19,7 +19,7 @@ export const searchJobs = async (query, country, state, remote) => {
     location = location.replaceAll(' ', '+');
   }
   try {
-    const response = await fetch (`https://cors-anywhere.herokuapp.com/https://findwork.dev/api/jobs/?location=${location}&remote=${remote}&search=${query}` , {
+    const response = await fetch (`https://findwork.dev/api/jobs/?location=${location}&remote=${remote}&search=${query}` , {
         headers: {
           Authorization: `Token ${apiKey}`
         }
