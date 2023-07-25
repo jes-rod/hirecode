@@ -1,0 +1,18 @@
+.logo {
+  height: 20%
+}
+.search-button {
+  background-color: #474747
+}
+.header {
+  display: flex
+}
+.text {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500
+}
+.submit-button {
+  width: 15rem
+}
+

@@ -1,0 +1,45 @@
+.logo {
+  height: 20%
+}
+.search-button {
+  background-color: #474747
+}
+.header {
+  display: flex
+}
+.text {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500
+}
+.submit-button {
+  width: 15rem
+}
+
+.jobs-grid {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-auto-columns: 2fr;
+  display: grid;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 700px;
+}
+
+@media screen and (max-width: 991px) {
+  .jobs-grid {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .jobs-grid {
+    grid-template-columns: 2fr;
+  }
+
+  .container {
+    justify-content: center;
+  }
+}
