@@ -25,7 +25,6 @@ export const searchJobs = async (query, country, state, remote) => {
         }
       });
     const jobs = await response.json();
-    console.log(jobs);
     return jobs.results;
   }catch(error){
     console.log(error);
