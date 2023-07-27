@@ -36,6 +36,7 @@ const SearchBar = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    props.setJobs([]);
     const jobs = await searchJobs(query, country, state, remote);
     props.setJobs(jobs);
     props.setFlag(true);
