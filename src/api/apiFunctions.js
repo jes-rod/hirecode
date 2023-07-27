@@ -2,13 +2,15 @@ const apiKey = process.env.REACT_APP_API_KEY
 
 export const searchJobs = async (query, country, state, remote) => {
   let location = '';
+  let rem = ''
   if(remote === 'Either'){
-    remote = '';
+    rem = '';
   }else if(remote === 'Remote'){
-    remote = 'true'
+    rem = 'true'
   }else{
-    remote = 'false'
+    rem = 'false'
   }
+  console.log(rem);
   
   if(country.name){
     location = location + country.name;
@@ -19,13 +21,14 @@ export const searchJobs = async (query, country, state, remote) => {
     location = location.replaceAll(' ', '+');
   }
   try {
-    const response = await fetch (`https://corsrepo-jes-rod.vercel.app/api` , {
+    const response = await fetch (`https://corsapp.netlify.app/.netlify/functions/api/api` , {
         headers: {
           Authorization: `Token ${apiKey}`,
-          'Target-URL': `https://findwork.dev/api/jobs/?location=${location}&remote=${remote}&search=${query}`
+          'Target-URL': `https://findwork.dev/api/jobs/?location=${location}&remote=${rem}&search=${query}`
         }
       });
     const jobs = await response.json();
+    console.log(jobs);
     return jobs.results;
   }catch(error){
     console.log(error);
