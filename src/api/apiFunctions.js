@@ -21,7 +21,7 @@ export const searchJobs = async (query, country, state, remote) => {
     location = location.replaceAll(' ', '+');
   }
   try {
-    const response = await fetch (`https://corsrepo-jes-rod.vercel.app` , {
+    const response = await fetch (`https://corsrepo-jes-rod.vercel.app/api` , {
         headers: {
           Authorization: `Token ${apiKey}`,
           'Target-URL': `https://findwork.dev/api/jobs/?location=${location}&remote=${rem}&search=${query}`
