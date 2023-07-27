@@ -32,6 +32,8 @@ export const searchJobs = async (query, country, state, remote) => {
     return jobs.results;
   }catch(error){
     console.log(error);
+    alert('Internal server error');
+    return [];
   }
 
   
