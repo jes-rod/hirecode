@@ -10,7 +10,6 @@ export const searchJobs = async (query, country, state, remote) => {
   }else{
     rem = 'false'
   }
-  console.log(rem);
   
   if(country.name){
     location = location + country.name;
@@ -37,7 +36,6 @@ export const searchJobs = async (query, country, state, remote) => {
       });
     const jobs2 = await response2.json();
     const jobs = [...jobs1.results, ...jobs2.results];
-    console.log(jobs);
     return (jobs);
   }catch(error){
     console.log(error);
@@ -51,7 +49,6 @@ export const searchJobs = async (query, country, state, remote) => {
         }
       });
     const jobs = await response.json();
-    console.log(jobs);
     return jobs.results;
   }catch(error){
     console.log(error);
