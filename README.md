@@ -43,7 +43,7 @@ The site allows the users to search by query and filter the results by country, 
 
 ## Live version
 
-You can use the app with the following link : [HIRECODE live](https://hirecode.netlify.app/)
+You can use the app with the following link : [HIRECODE](https://hirecode.netlify.app/)
 
 
 ## Feedback
